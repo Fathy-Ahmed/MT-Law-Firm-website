@@ -458,8 +458,11 @@ export default function Home() {
         <div className="container">
           <div className="contact-grid">
             {/* Column 1: Booking Form */}
-            <div className="form-container-box">
-              <h3 className="form-box-title">{t('contactLabel')}</h3>
+            <div>
+              <span className="badge-gold">{t('contactLabel')}</span>
+              <h2 className="section-title text-white" style={{ marginTop: '10px', marginBottom: '15px' }}>{t('contactTitle')}</h2>
+              <p className="section-subtitle" style={{ marginBottom: '30px' }}>{t('contactDesc')}</p>
+              <div className="form-container-box">
               
               <form id="consultationForm" className="consultation-form" onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -558,12 +561,10 @@ export default function Home() {
                 </button>
               </form>
             </div>
+          </div>
 
-            {/* Column 2: Contact Details & Info */}
+          {/* Column 2: Contact Details & Info */}
             <div className="contact-details-box">
-              <span className="badge-gold">{t('contactLabel')}</span>
-              <h2 className="section-title text-white">{t('contactTitle')}</h2>
-              <p className="section-subtitle">{t('contactDesc')}</p>
 
               <div className="info-cards-list">
                 <div className="info-card-item">
