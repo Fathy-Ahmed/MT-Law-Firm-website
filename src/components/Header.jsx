@@ -6,7 +6,6 @@ export default function Header() {
   const { lang, toggleLang, t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
   const location = useLocation();
 
   useEffect(() => {
@@ -16,55 +15,24 @@ export default function Header() {
       } else {
         setScrolled(false);
       }
-
-      if (location.pathname === '/') {
-        const sections = ['home', 'about', 'services', 'hierarchy', 'faq', 'contact'];
-        let currentSection = '';
-        for (const id of sections) {
-          const el = document.getElementById(id);
-          if (el) {
-            const top = el.offsetTop - 160;
-            const height = el.offsetHeight;
-            if (window.scrollY >= top && window.scrollY < top + height) {
-              currentSection = id;
-            }
-          }
-        }
-        setActiveSection(currentSection);
-      } else if (location.pathname.startsWith('/services/')) {
-        setActiveSection('services');
-      }
     };
-
     window.addEventListener('scroll', handleScroll);
     handleScroll();
-
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [location.pathname]);
-
-  const handleNavClick = (e, sectionId) => {
-    setDrawerOpen(false);
-    if (location.pathname === '/') {
-      e.preventDefault();
-      const el = document.getElementById(sectionId);
-      if (el) {
-        const offset = 120;
-        const topPos = el.offsetTop - offset;
-        window.scrollTo({
-          top: topPos,
-          behavior: 'smooth'
-        });
-        window.history.pushState(null, '', `#${sectionId}`);
-      }
-    }
-  };
+  }, []);
 
   const getNavLinkProps = (sectionId) => {
-    const isHome = location.pathname === '/';
+    let path = `/${sectionId}`;
+    if (sectionId === 'home') path = '/';
+    if (sectionId === 'hierarchy') path = '/team';
+    
+    const isActive = location.pathname === path || 
+      (sectionId === 'services' && location.pathname.startsWith('/services/'));
+      
     return {
-      to: isHome ? `#${sectionId}` : `/#${sectionId}`,
-      onClick: (e) => handleNavClick(e, sectionId),
-      className: `nav-link ${activeSection === sectionId ? 'active' : ''}`
+      to: path,
+      onClick: () => setDrawerOpen(false),
+      className: `nav-link ${isActive ? 'active' : ''}`
     };
   };
 
@@ -96,7 +64,7 @@ export default function Header() {
               <span className="lang-label-active">{lang === 'ar' ? 'EN' : 'عربي'}</span>
             </button>
 
-            <Link to={location.pathname === '/' ? '#contact' : '/#contact'} onClick={(e) => handleNavClick(e, 'contact')} className="btn btn-gold btn-nav">
+            <Link to="/contact" className="btn btn-gold btn-nav">
               {t('btnConsultation')}
             </Link>
             
@@ -123,7 +91,7 @@ export default function Header() {
           <li><Link {...getNavLinkProps('contact')}>{t('navContact')}</Link></li>
         </ul>
         <div className="drawer-footer">
-          <Link to={location.pathname === '/' ? '#contact' : '/#contact'} onClick={(e) => handleNavClick(e, 'contact')} className="btn btn-gold w-100 text-center">
+          <Link to="/contact" onClick={() => setDrawerOpen(false)} className="btn btn-gold w-100 text-center">
             {t('btnConsultation')}
           </Link>
         </div>

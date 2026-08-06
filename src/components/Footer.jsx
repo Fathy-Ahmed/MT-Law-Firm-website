@@ -4,23 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
   const { t } = useLanguage();
-  const location = useLocation();
 
-  const handleLinkClick = (e, sectionId) => {
-    if (location.pathname === '/') {
-      e.preventDefault();
-      const el = document.getElementById(sectionId);
-      if (el) {
-        const offset = 120;
-        const topPos = el.offsetTop - offset;
-        window.scrollTo({
-          top: topPos,
-          behavior: 'smooth'
-        });
-        window.history.pushState(null, '', `#${sectionId}`);
-      }
-    }
-  };
 
   return (
     <footer className="main-footer bg-dark">
@@ -77,12 +61,12 @@ export default function Footer() {
         <div className="footer-col links-col">
           <h4 className="footer-title">روابط سريعة / Quick Links</h4>
           <ul>
-            <li><Link to={location.pathname === '/' ? '#home' : '/#home'} onClick={(e) => handleLinkClick(e, 'home')}>{t('navHome')}</Link></li>
-            <li><Link to={location.pathname === '/' ? '#about' : '/#about'} onClick={(e) => handleLinkClick(e, 'about')}>{t('navAbout')}</Link></li>
-            <li><Link to={location.pathname === '/' ? '#services' : '/#services'} onClick={(e) => handleLinkClick(e, 'services')}>{t('navServices')}</Link></li>
-            <li><Link to={location.pathname === '/' ? '#hierarchy' : '/#hierarchy'} onClick={(e) => handleLinkClick(e, 'hierarchy')}>{t('navTeam')}</Link></li>
-            <li><Link to={location.pathname === '/' ? '#faq' : '/#faq'} onClick={(e) => handleLinkClick(e, 'faq')}>{t('faqLabel')}</Link></li>
-            <li><Link to={location.pathname === '/' ? '#contact' : '/#contact'} onClick={(e) => handleLinkClick(e, 'contact')}>{t('navContact')}</Link></li>
+            <li><Link to="/">{t('navHome')}</Link></li>
+            <li><Link to="/about">{t('navAbout')}</Link></li>
+            <li><Link to="/services">{t('navServices')}</Link></li>
+            <li><Link to="/team">{t('navTeam')}</Link></li>
+            <li><Link to="/faq">{t('faqLabel')}</Link></li>
+            <li><Link to="/contact">{t('navContact')}</Link></li>
           </ul>
         </div>
 
