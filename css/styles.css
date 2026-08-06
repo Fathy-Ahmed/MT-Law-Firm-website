@@ -1531,8 +1531,12 @@ html[dir="rtl"] .modal-sub-details ul li {
     color: var(--color-gold-dark);
 }
 
-.form-control {
-    background-color: var(--color-bg-dark);
+.form-control,
+.consultation-form input[type="text"],
+.consultation-form input[type="tel"],
+.consultation-form select,
+.consultation-form textarea {
+    background-color: #1E1B18; /* Site's flooring color */
     border: 1.5px solid var(--color-silver-primary);
     color: var(--color-text-light);
     padding: 12px 16px;
@@ -1543,14 +1547,24 @@ html[dir="rtl"] .modal-sub-details ul li {
     width: 100%;
 }
 
-html[lang="ar"] .form-control {
+html[lang="ar"] .form-control,
+html[lang="ar"] .consultation-form input,
+html[lang="ar"] .consultation-form select,
+html[lang="ar"] .consultation-form textarea {
     font-family: var(--font-ar-primary);
 }
-html[lang="en"] .form-control {
+html[lang="en"] .form-control,
+html[lang="en"] .consultation-form input,
+html[lang="en"] .consultation-form select,
+html[lang="en"] .consultation-form textarea {
     font-family: var(--font-en-primary);
 }
 
-.form-control:focus {
+.form-control:focus,
+.consultation-form input[type="text"]:focus,
+.consultation-form input[type="tel"]:focus,
+.consultation-form select:focus,
+.consultation-form textarea:focus {
     border-color: var(--color-gold-primary);
     box-shadow: 0 0 10px rgba(200, 169, 126, 0.15);
 }
@@ -1621,7 +1635,10 @@ textarea.form-control {
     font-weight: 600;
 }
 
-.form-control.invalid {
+.form-control.invalid,
+.consultation-form input.invalid,
+.consultation-form select.invalid,
+.consultation-form textarea.invalid {
     border-color: #c0392b;
 }
 
