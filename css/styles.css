@@ -2509,7 +2509,7 @@ html[lang="ar"] .service-detail-main-content ul li::before {
     width: 100%;
     background: none;
     border: none;
-    padding: 22px 25px;
+    padding: 18px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -2517,6 +2517,7 @@ html[lang="ar"] .service-detail-main-content ul li::before {
     text-align: inherit;
     font-family: inherit;
     transition: var(--transition-smooth);
+    min-height: 96px;
 }
 
 .faq-question-btn h3 {
