@@ -1482,7 +1482,7 @@ html[dir="rtl"] .modal-sub-details ul li {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 7fr 5fr;
+    grid-template-columns: 5fr 7fr;
     gap: 50px;
     align-items: start;
 }
