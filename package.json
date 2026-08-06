@@ -3,12 +3,19 @@
   "version": "1.0.0",
   "description": "Website for MT Law Firm",
   "main": "index.html",
+  "type": "module",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
     "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.2"
   }
 }
