@@ -6,26 +6,26 @@
    1. CORE VARIABLES & THEME SETUP
    ---------------------------------------------------- */
 :root {
-    /* Color Palette (Warm Coffee & Earth Tones) */
-    --color-bg-light: #FDFBF7;         /* Soft Cream */
-    --color-bg-dark: #2B2623;          /* Deep Espresso / Taupe */
-    --color-bg-deep: #1C1917;          /* Pitch Espresso / Black */
-    --color-bg-card-light: #FAF8F5;    /* Latte Cream */
-    --color-bg-card-dark: #38312D;     /* Warm Roast */
+    /* Bespoke Minimal Luxury Aesthetic & Design Tokens */
+    --color-bg-light: #1E1B18;         /* Warm Charcoal (primary page bg) */
+    --color-bg-dark: #2A2420;          /* Slightly lighter warm dark tone (sections) */
+    --color-bg-deep: #1E1B18;          /* Warm Charcoal */
+    --color-bg-card-light: #3A322D;    /* Elevated dark card background */
+    --color-bg-card-dark: #3A322D;     /* Elevated dark card background */
     
-    --color-gold-primary: #C8A97E;     /* Latte Gold */
-    --color-gold-light: #E5D5C0;       /* Silk Latte */
-    --color-gold-dark: #A67C52;        /* Dark Coffee Gold */
-    --color-gold-accent: #C8A97E;      /* Highlights */
+    --color-gold-primary: #C8A96A;     /* Primary Accent Gold */
+    --color-gold-light: #E6D2A2;       /* Light Gold Accent (outlines, badges) */
+    --color-gold-dark: #A87C33;        /* Hover Gold */
+    --color-gold-accent: #C8A96A;      /* Highlights */
     
-    --color-silver-primary: #8C827A;   /* Soft Warm Gray */
-    --color-silver-dark: #5C5450;      /* Dark Earth Gray */
-    --color-silver-light: #F0EDE9;     /* Light Gray Silk */
+    --color-silver-primary: #6B5A46;   /* Bronze Dividers & Borders */
+    --color-silver-dark: #6B5A46;      /* Bronze Dividers */
+    --color-silver-light: #3A322D;     /* Muted dark separator */
     
-    --color-text-dark: #FDFBF7;        /* Cream Text on dark background */
-    --color-text-light: #2B2623;       /* Espresso Text on light background */
-    --color-text-muted-dark: #D1C9C2;  /* Muted Gray on dark */
-    --color-text-muted-light: #736B66; /* Muted Gray on light */
+    --color-text-dark: #F4F1EB;        /* Primary Text: High-contrast warm white */
+    --color-text-light: #F4F1EB;       /* Primary Text: High-contrast warm white */
+    --color-text-muted-dark: #B7AEA2;  /* Secondary Text: Muted warm gray/beige */
+    --color-text-muted-light: #B7AEA2; /* Secondary Text: Muted warm gray/beige */
 
     /* Typography */
     --font-ar-primary: 'Tajawal', sans-serif;
@@ -39,8 +39,8 @@
     --border-radius-sm: 4px;
     --border-radius-md: 8px;
     --border-radius-lg: 16px;
-    --box-shadow-luxury: 0 15px 35px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(200, 169, 126, 0.05);
-    --box-shadow-light: 0 10px 30px rgba(43, 38, 35, 0.04);
+    --box-shadow-luxury: 0 10px 30px rgba(200, 169, 106, 0.15); /* Soft glowing drop-shadows */
+    --box-shadow-light: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 /* ========================================== */
@@ -396,14 +396,16 @@ html[dir="ltr"] .ticker-content {
     width: 100%;
     z-index: 1000;
     transition: var(--transition-smooth);
-    background: rgba(253, 251, 247, 0.85); /* Cream blur */
+    background: rgba(30, 27, 24, 0.8); /* Charcoal glass */
     backdrop-filter: blur(12px);
-    border-bottom: 1.5px solid rgba(43, 38, 35, 0.05);
+    border-bottom: 1px solid #6B5A46;
 }
 
 .main-header.scrolled {
-    background: var(--color-bg-light);
-    box-shadow: var(--box-shadow-light);
+    background: rgba(30, 27, 24, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #6B5A46;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     padding: 10px 0;
     top: 0; /* move back to absolute top when scrolling */
 }
@@ -647,7 +649,7 @@ html[dir="ltr"] .mobile-drawer.open {
     min-height: 700px;
     display: flex;
     align-items: center;
-    background: radial-gradient(circle at 10% 20%, rgba(43, 38, 35, 0.95) 0%, rgba(28, 25, 23, 0.98) 90%), url('../assets/images/hero_bg.png');
+    background: linear-gradient(135deg, #1E1B18 0%, #2A2420 50%, #3A322D 100%);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -659,7 +661,7 @@ html[dir="ltr"] .mobile-drawer.open {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(28, 25, 23, 0.6) 0%, rgba(28, 25, 23, 0.95) 100%);
+    background: radial-gradient(circle at center, transparent 0%, rgba(30, 27, 24, 0.5) 100%);
     z-index: 1;
 }
 
@@ -675,6 +677,21 @@ html[dir="ltr"] .mobile-drawer.open {
 
 .hero-content {
     max-width: 100%;
+    position: relative;
+}
+
+.hero-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(200, 169, 106, 0.35) 0%, rgba(200, 169, 106, 0) 70%);
+    filter: blur(50px);
+    pointer-events: none;
+    z-index: -1;
 }
 
 .badge-gold {
@@ -1045,8 +1062,9 @@ html[lang="en"] .section-subtitle {
 }
 
 .service-card {
-    background: var(--color-bg-card-dark);
-    border: 1.5px solid rgba(200, 169, 126, 0.05);
+    background: rgba(58, 50, 45, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid #6B5A46;
     border-radius: var(--border-radius-md);
     padding: 35px 30px;
     transition: var(--transition-smooth);
@@ -1054,7 +1072,7 @@ html[lang="en"] .section-subtitle {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 .service-card::before {
@@ -1075,8 +1093,8 @@ html[dir="ltr"] .service-card::before {
 
 .service-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(200, 169, 126, 0.25);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    border-color: var(--color-gold-primary);
+    box-shadow: 0 10px 30px rgba(200, 169, 106, 0.15);
 }
 
 .service-card:hover::before {
@@ -1289,8 +1307,9 @@ html[dir="rtl"] .modal-sub-details ul li {
 }
 
 .member-card {
-    background-color: var(--color-bg-card-light);
-    border: 1px solid rgba(166, 124, 82, 0.1);
+    background-color: rgba(58, 50, 45, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid #6B5A46;
     border-radius: var(--border-radius-md);
     overflow: hidden;
     transition: var(--transition-smooth);
@@ -1299,13 +1318,14 @@ html[dir="rtl"] .modal-sub-details ul li {
 
 .member-card.highlight-border {
     border: 1.5px solid var(--color-gold-primary);
-    box-shadow: var(--box-shadow-luxury);
-    background-color: var(--color-bg-card-light);
+    box-shadow: 0 10px 30px rgba(200, 169, 106, 0.25);
+    background-color: rgba(58, 50, 45, 0.85);
 }
 
 .member-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(43, 38, 35, 0.15);
+    box-shadow: 0 10px 30px rgba(200, 169, 106, 0.15);
+    border-color: var(--color-gold-primary);
 }
 
 .director-card {
@@ -1503,7 +1523,7 @@ html[dir="rtl"] .modal-sub-details ul li {
 .form-label {
     font-size: 0.88rem;
     font-weight: 700;
-    color: var(--color-bg-dark);
+    color: var(--color-text-light);
     margin-bottom: 8px;
 }
 
@@ -1512,8 +1532,8 @@ html[dir="rtl"] .modal-sub-details ul li {
 }
 
 .form-control {
-    background-color: #ffffff;
-    border: 1.5px solid rgba(140, 130, 122, 0.2);
+    background-color: var(--color-bg-dark);
+    border: 1.5px solid var(--color-silver-primary);
     color: var(--color-text-light);
     padding: 12px 16px;
     border-radius: var(--border-radius-sm);
@@ -1558,8 +1578,8 @@ textarea.form-control {
 }
 
 .file-upload-design {
-    border: 1.5px dashed rgba(140, 130, 122, 0.4);
-    background-color: #ffffff;
+    border: 1.5px dashed var(--color-silver-primary);
+    background-color: var(--color-bg-dark);
     border-radius: var(--border-radius-sm);
     padding: 20px;
     text-align: center;
@@ -2293,11 +2313,11 @@ html[dir="ltr"] .back-to-top {
 }
 
 .service-detail-main-content {
-    background: #ffffff;
+    background: var(--color-bg-card-light);
     padding: 50px;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--box-shadow-light);
-    border: 1px solid rgba(43, 38, 35, 0.03);
+    border: 1px solid var(--color-silver-primary);
 }
 
 .service-detail-main-content h4 {
@@ -2407,7 +2427,7 @@ html[lang="ar"] .service-detail-main-content ul li::before {
     display: block;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--color-bg-dark);
+    color: var(--color-text-light);
     margin-bottom: 8px;
 }
 
@@ -2415,9 +2435,10 @@ html[lang="ar"] .service-detail-main-content ul li::before {
 .sidebar-booking-form textarea {
     width: 100%;
     padding: 12px 16px;
-    border: 1px solid var(--color-gold-light);
+    border: 1px solid var(--color-silver-primary);
     border-radius: var(--border-radius-md);
-    background-color: #ffffff;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
     font-family: inherit;
     font-size: 0.95rem;
     transition: var(--transition-smooth);
