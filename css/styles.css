@@ -1314,7 +1314,10 @@ html[dir="rtl"] .modal-sub-details ul li {
     margin: 10px 0;
 }
 
-.member-card {
+.member-card,
+.director-card,
+.deputy-card,
+.cfo-card {
     background-color: rgba(58, 50, 45, 0.7);
     backdrop-filter: blur(12px);
     border: 1px solid #6B5A46;
@@ -1330,21 +1333,80 @@ html[dir="rtl"] .modal-sub-details ul li {
     background-color: rgba(58, 50, 45, 0.85);
 }
 
-.member-card:hover {
+.member-card:hover,
+.director-card:hover,
+.deputy-card:hover,
+.cfo-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(200, 169, 106, 0.15);
     border-color: var(--color-gold-primary);
 }
 
+/* Hierarchy Structure for Team */
+.hierarchy-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+}
+
+.hierarchy-level {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.level-1 {
+    display: flex;
+    justify-content: center;
+}
+
+.level-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .level-2 {
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    .deputy-card, .cfo-card {
+        width: calc(50% - 15px);
+        max-width: 520px;
+    }
+}
+
+.hierarchy-connector {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    position: relative;
+}
+
+.connector-vertical {
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-gold-primary), var(--color-gold-dark));
+    opacity: 0.6;
+}
+
 .director-card {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     display: flex;
     flex-direction: row;
 }
 
 .member-img-wrap {
-    width: 42%;
+    width: 40%;
     position: relative;
     overflow: hidden;
 }
@@ -1356,7 +1418,10 @@ html[dir="rtl"] .modal-sub-details ul li {
     transition: var(--transition-smooth);
 }
 
-.member-card:hover .member-photo {
+.member-card:hover .member-photo,
+.director-card:hover .member-photo,
+.deputy-card:hover .member-photo,
+.cfo-card:hover .member-photo {
     transform: scale(1.04);
 }
 
@@ -1375,31 +1440,45 @@ html[dir="rtl"] .modal-sub-details ul li {
 }
 
 .member-info {
-    width: 58%;
+    width: 60%;
     padding: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.member-role {
-    font-size: 0.8rem;
+.member-badge {
+    align-self: flex-start;
+    padding: 4px 10px;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.72rem;
     font-weight: 800;
-    color: var(--color-gold-dark);
-    margin-bottom: 5px;
-    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.gold-badge {
+    background-color: rgba(200, 169, 126, 0.15);
+    border: 1px solid var(--color-gold-primary);
+    color: var(--color-gold-primary);
+}
+
+.silver-badge {
+    background-color: rgba(183, 174, 162, 0.1);
+    border: 1px solid #B7AEA2;
+    color: #B7AEA2;
 }
 
 .member-name {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 800;
-    color: var(--color-bg-dark);
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
 .member-bio {
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     color: var(--color-text-muted-light);
+    line-height: 1.6;
     margin-bottom: 15px;
     text-align: justify;
 }
