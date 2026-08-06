@@ -564,6 +564,10 @@ export default function Home() {
           </div>
 
           {/* Column 2: Contact Details & Info */}
+          <div>
+            <span className="badge-gold">{t('contactInfoLabel')}</span>
+            <h2 className="section-title text-white" style={{ marginTop: '10px', marginBottom: '15px' }}>{t('contactInfoTitle')}</h2>
+            <p className="section-subtitle" style={{ marginBottom: '30px' }}>{t('contactInfoDesc')}</p>
             <div className="contact-details-box">
 
               <div className="info-cards-list">
@@ -613,6 +617,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>
