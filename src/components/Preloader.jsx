@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logo from '../assets/images/logo.png';
 
 export default function Preloader() {
   const [visible, setVisible] = useState(true);
@@ -49,7 +50,7 @@ export default function Preloader() {
   return (
     <div id="preloader" className={`preloader-overlay ${fade ? 'fade-out' : ''}`}>
       <div className="preloader-content">
-        <img src="/assets/images/logo.png" alt="MT Law Firm Logo" className="preloader-logo" />
+        <img src={logo} alt="MT Law Firm Logo" className="preloader-logo" />
       </div>
     </div>
   );

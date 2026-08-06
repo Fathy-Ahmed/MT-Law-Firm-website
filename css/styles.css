@@ -649,7 +649,7 @@ html[dir="ltr"] .mobile-drawer.open {
     min-height: 700px;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #1E1B18 0%, #2A2420 50%, #3A322D 100%);
+    background: linear-gradient(135deg, rgba(30, 27, 24, 0.85) 0%, rgba(42, 36, 32, 0.85) 50%, rgba(58, 50, 45, 0.85) 100%), url('../src/assets/images/hero_bg.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

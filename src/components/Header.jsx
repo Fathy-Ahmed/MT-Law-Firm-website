@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import logo from '../assets/images/logo.png';
 
 export default function Header() {
   const { lang, toggleLang, t } = useLanguage();
@@ -41,7 +42,7 @@ export default function Header() {
       <header className={`main-header ${scrolled ? 'scrolled' : ''}`}>
         <div className="container header-container">
           <Link to="/" className="logo-box" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src="/assets/images/logo.png" alt="MT Law Firm Logo" className="logo-emblem" />
+            <img src={logo} alt="MT Law Firm Logo" className="logo-emblem" />
             <div className="logo-text">
               <span className="brand-ar">{t('logoTextAr')}</span>
               <span className="brand-en">{t('logoTextEn')}</span>

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import director from '../assets/images/director.jpg';
+import deputyDirector from '../assets/images/deputy_director.png';
+import cfo from '../assets/images/cfo.png';
 
 export default function Team() {
   const { t } = useLanguage();
@@ -34,7 +37,7 @@ export default function Team() {
             <div className="hierarchy-level level-1">
               <div className="director-card">
                 <div className="member-img-wrap">
-                  <img src="/assets/images/director.jpg" alt={t('directorName')} className="member-photo" />
+                  <img src={director} alt={t('directorName')} className="member-photo" />
                 </div>
                 <div className="member-info">
                   <span className="member-badge gold-badge">{t('directorRole')}</span>
@@ -52,7 +55,7 @@ export default function Team() {
             <div className="hierarchy-level level-2">
               <div className="deputy-card">
                 <div className="member-img-wrap">
-                  <img src="/assets/images/deputy_director.png" alt={t('deputyName')} className="member-photo" />
+                  <img src={deputyDirector} alt={t('deputyName')} className="member-photo" />
                 </div>
                 <div className="member-info">
                   <span className="member-badge silver-badge">{t('deputyRole')}</span>
@@ -63,7 +66,7 @@ export default function Team() {
 
               <div className="cfo-card">
                 <div className="member-img-wrap">
-                  <img src="/assets/images/cfo.png" alt={t('cfoName')} className="member-photo" />
+                  <img src={cfo} alt={t('cfoName')} className="member-photo" />
                 </div>
                 <div className="member-info">
                   <span className="member-badge silver-badge">{t('cfoRole')}</span>

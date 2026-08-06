@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import logo from '../assets/images/logo.png';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -12,7 +13,7 @@ export default function Footer() {
         {/* Col 1: About Brand */}
         <div className="footer-col brand-col">
           <Link to="/" className="logo-box footer-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src="/assets/images/logo.png" alt="MT Law Firm Logo" className="logo-emblem" />
+            <img src={logo} alt="MT Law Firm Logo" className="logo-emblem" />
             <div className="logo-text">
               <span className="brand-ar">{t('logoTextAr')}</span>
               <span className="brand-en">{t('logoTextEn')}</span>
