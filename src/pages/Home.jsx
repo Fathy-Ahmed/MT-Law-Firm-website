@@ -214,10 +214,6 @@ export default function Home() {
               }}>{t('btnExploreServices')}</a>
             </div>
           </div>
-          
-          <div className="hero-logo-side">
-            <img src="/assets/images/hero_logo.png" alt="MT Law Firm Emblem" className="hero-logo-img" />
-          </div>
         </div>
       </section>
 
