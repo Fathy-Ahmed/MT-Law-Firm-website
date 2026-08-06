@@ -642,3 +642,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// ----------------------------------------------------
+// 9. PRELOADER FADE-OUT
+// ----------------------------------------------------
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('fade-out');
+        document.body.classList.remove('preloader-active');
+        
+        // Remove preloader from DOM after transition finishes (600ms)
+        setTimeout(() => {
+            preloader.remove();
+        }, 600);
+    }
+});
