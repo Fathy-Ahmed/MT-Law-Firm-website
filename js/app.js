@@ -644,17 +644,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ----------------------------------------------------
-// 9. PRELOADER FADE-OUT
+// 9. PRELOADER FADE-OUT WITH 5S MINIMUM DURATION
 // ----------------------------------------------------
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.classList.add('fade-out');
-        document.body.classList.remove('preloader-active');
-        
-        // Remove preloader from DOM after transition finishes (600ms)
-        setTimeout(() => {
-            preloader.remove();
-        }, 600);
+let resourcesLoaded = false;
+let minimumTimeElapsed = false;
+
+function attemptRemovePreloader() {
+    if (resourcesLoaded && minimumTimeElapsed) {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.classList.add('fade-out');
+            document.body.classList.remove('preloader-active');
+            
+            // Remove preloader from DOM after transition finishes (600ms)
+            setTimeout(() => {
+                preloader.remove();
+            }, 600);
+        }
     }
+}
+
+// Force a minimum display time of 5 seconds (5000ms)
+setTimeout(() => {
+    minimumTimeElapsed = true;
+    attemptRemovePreloader();
+}, 5000);
+
+// Wait for window load event (DOM and all assets ready)
+window.addEventListener('load', () => {
+    resourcesLoaded = true;
+    attemptRemovePreloader();
 });
