@@ -18,7 +18,7 @@ export default function Header() {
       }
 
       if (location.pathname === '/') {
-        const sections = ['home', 'about', 'services', 'hierarchy', 'contact'];
+        const sections = ['home', 'about', 'services', 'hierarchy', 'faq', 'contact'];
         let currentSection = '';
         for (const id of sections) {
           const el = document.getElementById(id);
@@ -86,6 +86,7 @@ export default function Header() {
               <li><Link {...getNavLinkProps('about')}>{t('navAbout')}</Link></li>
               <li><Link {...getNavLinkProps('services')}>{t('navServices')}</Link></li>
               <li><Link {...getNavLinkProps('hierarchy')}>{t('navTeam')}</Link></li>
+              <li><Link {...getNavLinkProps('faq')}>{t('faqLabel')}</Link></li>
               <li><Link {...getNavLinkProps('contact')}>{t('navContact')}</Link></li>
             </ul>
           </nav>
@@ -118,6 +119,7 @@ export default function Header() {
           <li><Link {...getNavLinkProps('about')}>{t('navAbout')}</Link></li>
           <li><Link {...getNavLinkProps('services')}>{t('navServices')}</Link></li>
           <li><Link {...getNavLinkProps('hierarchy')}>{t('navTeam')}</Link></li>
+          <li><Link {...getNavLinkProps('faq')}>{t('faqLabel')}</Link></li>
           <li><Link {...getNavLinkProps('contact')}>{t('navContact')}</Link></li>
         </ul>
         <div className="drawer-footer">

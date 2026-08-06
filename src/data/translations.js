@@ -103,7 +103,12 @@ export const translations = {
     
     // Footer bottom
     footerCopy: "© 2026 مكتب MT للمحاماة والاستشارات القانونية. جميع الحقوق محفوظة.",
-    footerDev: "صُمم الفن الهيكلي والبرمجة بفخامة لمصلحة مكتب MT."
+    footerDev: "صُمم الفن الهيكلي والبرمجة بفخامة لمصلحة مكتب MT.",
+    
+    // FAQ
+    faqLabel: "الأسئلة الشائعة",
+    faqTitle: "الأسئلة الشائعة والاستفسارات القانونية",
+    faqSubtitle: "نستعرض هنا إجابات سريعة لأكثر الاستفسارات شيوعاً لتسهيل رؤيتكم القانونية."
   },
   en: {
     // Ticker
@@ -209,6 +214,11 @@ export const translations = {
     
     // Footer bottom
     footerCopy: "© 2026 MT Law Firm. All rights reserved.",
-    footerDev: "Designed & Engineered for MT Law Firm."
+    footerDev: "Designed & Engineered for MT Law Firm.",
+    
+    // FAQ
+    faqLabel: "FAQ",
+    faqTitle: "Frequently Asked Questions",
+    faqSubtitle: "Here are answers to the most frequent inquiries regarding our legal proceedings."
   }
 };

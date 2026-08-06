@@ -81,6 +81,7 @@ export default function Footer() {
             <li><Link to={location.pathname === '/' ? '#about' : '/#about'} onClick={(e) => handleLinkClick(e, 'about')}>{t('navAbout')}</Link></li>
             <li><Link to={location.pathname === '/' ? '#services' : '/#services'} onClick={(e) => handleLinkClick(e, 'services')}>{t('navServices')}</Link></li>
             <li><Link to={location.pathname === '/' ? '#hierarchy' : '/#hierarchy'} onClick={(e) => handleLinkClick(e, 'hierarchy')}>{t('navTeam')}</Link></li>
+            <li><Link to={location.pathname === '/' ? '#faq' : '/#faq'} onClick={(e) => handleLinkClick(e, 'faq')}>{t('faqLabel')}</Link></li>
             <li><Link to={location.pathname === '/' ? '#contact' : '/#contact'} onClick={(e) => handleLinkClick(e, 'contact')}>{t('navContact')}</Link></li>
           </ul>
         </div>
