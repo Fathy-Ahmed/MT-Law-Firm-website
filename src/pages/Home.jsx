@@ -396,43 +396,47 @@ export default function Home() {
               <h2 className="section-title text-white">{t('contactTitle')}</h2>
               <p className="section-subtitle">{t('contactDesc')}</p>
 
-              <div className="contact-info-list">
-                <div className="info-item">
-                  <div className="info-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="3"/></svg>
+              <div className="info-cards-list">
+                <div className="info-card-item">
+                  <div className="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="3"/></svg>
                   </div>
-                  <div className="info-text">
+                  <div className="card-text">
+                    <h4>العنوان / Address</h4>
                     <p>{t('mapAddress')}</p>
                   </div>
                 </div>
-                <div className="info-item">
-                  <div className="info-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <div className="info-card-item">
+                  <div className="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                   </div>
-                  <div className="info-text">
+                  <div className="card-text">
+                    <h4>الهاتف / Phone</h4>
                     <p><span>{t('mapPhoneLabel')}</span> <a href="tel:+97141234567">+971 4 123 4567</a></p>
                     <p><span>{t('mapMobileLabel')}</span> <a href="tel:+971509876543">+971 50 987 6543</a></p>
                   </div>
                 </div>
-                <div className="info-item">
-                  <div className="info-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <div className="info-card-item">
+                  <div className="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                   </div>
-                  <div className="info-text">
-                    <p><span>{t('mapEmailLabel')}</span> <a href="mailto:info@mt-lawfirm.com">info@mt-lawfirm.com</a></p>
+                  <div className="card-text">
+                    <h4>البريد / Email</h4>
+                    <p><a href="mailto:info@mt-lawfirm.com">info@mt-lawfirm.com</a></p>
                   </div>
                 </div>
               </div>
 
               {/* Map block */}
-              <div className="contact-map-wrapper">
-                <div className="map-placeholder">
-                  <svg className="map-grid-bg" viewBox="0 0 400 150">
+              <div className="map-wrapper-box">
+                <div className="map-luxury-placeholder">
+                  <div className="map-glow"></div>
+                  <svg className="map-bg-grid" viewBox="0 0 400 150">
                     <path d="M 50 0 L 50 150 M 100 0 L 100 150 M 150 0 L 150 150 M 200 0 L 200 150 M 250 0 L 250 150" />
                   </svg>
                   <div className="map-marker-pin">
                     <div className="pulse-ring"></div>
-                    <svg viewBox="0 0 24 24" fill="#C8A97E" width="24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="#C8A96A" width="24" height="24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                   </div>
                   <span className="map-label">{t('mapTitle')}</span>
                   <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="btn btn-gold btn-sm map-direction-btn">{t('mapBtn')}</a>
