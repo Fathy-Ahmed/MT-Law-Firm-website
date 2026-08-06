@@ -511,10 +511,10 @@ export default function Home() {
                 </div>
 
                 {/* Drag and drop file field */}
-                <div className="form-group">
-                  <label>{t('formUpload')}</label>
-                  <div
-                    className={`file-upload-drag-area ${dragActive ? 'drag-active' : ''} ${file ? 'file-selected' : ''}`}
+                <div className="form-group span-2">
+                  <label className="form-label">{t('formUpload')}</label>
+                  <div 
+                    className={`file-upload-wrapper ${dragActive ? 'drag-active' : ''}`}
                     onDragEnter={handleDrag}
                     onDragOver={handleDrag}
                     onDragLeave={handleDrag}
@@ -523,17 +523,19 @@ export default function Home() {
                     <input
                       type="file"
                       id="caseFile"
-                      className="file-hidden-input"
+                      className="file-upload-input"
                       onChange={handleFileChange}
                     />
-                    <label htmlFor="caseFile" className="drag-area-label">
-                      <div className="upload-icon-wrap">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                      </div>
-                      <span id="fileUploadText" style={{ color: file ? '#C8A97E' : '' }}>
+                    <div className="file-upload-design">
+                      <svg className="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                      </svg>
+                      <span className="file-upload-text">
                         {file ? `${file.name} (${(file.size / (1024 * 1024)).toFixed(2)} MB)` : t('fileDrag')}
                       </span>
-                    </label>
+                    </div>
                   </div>
                 </div>
 

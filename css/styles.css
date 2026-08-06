@@ -1498,11 +1498,11 @@ html[dir="rtl"] .modal-sub-details ul li {
 .form-box-title {
     font-size: 1.35rem;
     font-weight: 800;
-    color: var(--color-bg-dark);
+    color: var(--color-gold-primary);
     margin-bottom: 30px;
     position: relative;
     padding-bottom: 12px;
-    border-bottom: 1.5px solid rgba(43, 38, 35, 0.05);
+    border-bottom: 1.5px solid rgba(200, 169, 126, 0.15);
 }
 
 .form-grid {
