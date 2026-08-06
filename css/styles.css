@@ -2179,3 +2179,277 @@ html[dir="ltr"] .back-to-top {
         grid-template-columns: 1fr !important;
     }
 }
+
+/* ========================================== */
+/* 10. SERVICE DETAIL SUB-PAGE STYLES         */
+/* ========================================== */
+#service-detail-view {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+    min-height: 80vh;
+}
+
+.service-detail-hero {
+    background: linear-gradient(135deg, var(--color-bg-deep) 0%, var(--color-bg-dark) 100%);
+    color: var(--color-text-dark);
+    padding: 80px 0 60px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--color-gold-primary);
+    position: relative;
+}
+
+.service-detail-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(200, 169, 126, 0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+    opacity: 0.8;
+}
+
+.service-detail-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.service-detail-hero .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-gold-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(200, 169, 126, 0.2);
+    padding: 8px 16px;
+    border-radius: var(--border-radius-md);
+    background: rgba(200, 169, 126, 0.03);
+}
+
+.service-detail-hero .back-link:hover {
+    color: var(--color-bg-light);
+    background-color: var(--color-gold-primary);
+    border-color: var(--color-gold-primary);
+}
+
+.service-detail-hero .service-icon-large {
+    color: var(--color-gold-primary);
+    margin-bottom: 20px;
+    display: inline-block;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.service-detail-hero .service-icon-large svg {
+    width: 64px;
+    height: 64px;
+}
+
+.service-detail-hero .service-title-large {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.service-detail-hero .breadcrumbs {
+    font-size: 0.9rem;
+    color: var(--color-text-muted-dark);
+}
+
+.service-detail-hero .breadcrumbs a {
+    color: var(--color-text-muted-dark);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.service-detail-hero .breadcrumbs a:hover {
+    color: var(--color-gold-primary);
+}
+
+.service-detail-hero .breadcrumbs .separator {
+    margin: 0 8px;
+    opacity: 0.5;
+}
+
+/* Service Detail Layout */
+.service-detail-body {
+    padding: 80px 0;
+}
+
+.service-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+}
+
+@media (min-width: 992px) {
+    .service-detail-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.service-detail-main-content {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-light);
+    border: 1px solid rgba(43, 38, 35, 0.03);
+}
+
+.service-detail-main-content h4 {
+    font-size: 1.4rem;
+    color: var(--color-bg-dark);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.service-detail-main-content h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-gold-primary);
+}
+
+html[lang="ar"] .service-detail-main-content h4::after {
+    left: auto;
+    right: 0;
+}
+
+.service-detail-main-content p {
+    color: var(--color-text-muted-light);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.service-detail-main-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.service-detail-main-content ul li {
+    position: relative;
+    padding-left: 28px;
+    font-size: 1.05rem;
+    color: var(--color-text-light);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+html[lang="ar"] .service-detail-main-content ul li {
+    padding-left: 0;
+    padding-right: 28px;
+}
+
+.service-detail-main-content ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-gold-primary);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+html[lang="ar"] .service-detail-main-content ul li::before {
+    left: auto;
+    right: 0;
+}
+
+/* Sidebar & Sticky Booking Card */
+.service-detail-sidebar {
+    position: relative;
+}
+
+.sidebar-sticky-wrapper {
+    position: sticky;
+    top: 110px; /* Below sticky navbar */
+}
+
+.sidebar-booking-card {
+    background-color: var(--color-bg-card-light);
+    border: 1px solid var(--color-gold-light);
+    padding: 35px 30px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-light);
+}
+
+.sidebar-booking-card .card-title {
+    font-size: 1.3rem;
+    color: var(--color-bg-dark);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.sidebar-booking-card .card-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-text-muted-light);
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+/* Booking Form Elements */
+.sidebar-booking-form .form-group {
+    margin-bottom: 20px;
+}
+
+.sidebar-booking-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-bg-dark);
+    margin-bottom: 8px;
+}
+
+.sidebar-booking-form input,
+.sidebar-booking-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--color-gold-light);
+    border-radius: var(--border-radius-md);
+    background-color: #ffffff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+}
+
+.sidebar-booking-form input:focus,
+.sidebar-booking-form textarea:focus {
+    border-color: var(--color-gold-dark);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(200, 169, 126, 0.15);
+}
+
+/* Back navigation at bottom */
+.service-detail-footer {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(43, 38, 35, 0.08);
+    padding-top: 30px;
+}
+
+.service-detail-footer .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.service-detail-footer .btn-back:hover {
+    color: var(--color-gold-primary);
+}

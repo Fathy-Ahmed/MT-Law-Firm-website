@@ -263,6 +263,17 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('scrolled');
         }
 
+        // Highlight "Practice Areas" if we are on a service detail page
+        if (window.location.hash.startsWith('#/service/')) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#services') {
+                    link.classList.add('active');
+                }
+            });
+            return;
+        }
+
         // Active link scroll detection
         let currentSectionId = '';
         sections.forEach(section => {
@@ -311,6 +322,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnLabel = langToggleBtn.querySelector('.lang-label-active');
         if (btnLabel) {
             btnLabel.innerText = lang === 'ar' ? 'EN' : 'عربي';
+        }
+
+        // Swap dynamic description content if present in the DOM
+        const dynamicDesc = document.getElementById('serviceDetailContent');
+        if (dynamicDesc) {
+            const encoded = lang === 'ar' ? dynamicDesc.getAttribute('data-ar-desc') : dynamicDesc.getAttribute('data-en-desc');
+            if (encoded) {
+                dynamicDesc.innerHTML = decodeURIComponent(encoded);
+            }
         }
 
         // Change layout/font dynamic adjustments if any (handled via CSS :lang bindings)
@@ -446,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
     serviceCards.forEach(card => {
         card.addEventListener('click', () => {
             const serviceId = card.getAttribute('data-service');
-            openServiceModal(serviceId);
+            window.location.hash = `#/service/${serviceId}`;
         });
     });
 
@@ -640,6 +660,181 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ----------------------------------------------------
+    // 9. DYNAMIC ROUTING & SUB-PAGES
+    // ----------------------------------------------------
+    function renderServiceDetailPage(serviceId) {
+        const data = servicesData[serviceId];
+        if (!data) return;
+
+        const arData = data.ar;
+        const enData = data.en;
+        const iconSvg = data.ar.icon || data.en.icon || '';
+
+        const serviceDetailView = document.getElementById('service-detail-view');
+        if (!serviceDetailView) return;
+
+        serviceDetailView.innerHTML = `
+            <section class="service-detail-hero">
+                <div class="container">
+                    <a href="#services" class="back-link">
+                        <span data-ar="&larr; عودة للمجالات" data-en="&larr; Back to Services">&larr; عودة للمجالات</span>
+                    </a>
+                    <div class="service-icon-large">
+                        ${iconSvg}
+                    </div>
+                    <h1 class="service-title-large" data-ar="${arData.title.replace(/"/g, '&quot;')}" data-en="${enData.title.replace(/"/g, '&quot;')}">
+                        ${currentLang === 'ar' ? arData.title : enData.title}
+                    </h1>
+                    <div class="breadcrumbs">
+                        <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+                        <span class="separator">/</span>
+                        <a href="#services" data-ar="مجالات الاختصاص" data-en="Practice Areas">مجالات الاختصاص</a>
+                        <span class="separator">/</span>
+                        <span class="current" data-ar="${arData.title.replace(/"/g, '&quot;')}" data-en="${enData.title.replace(/"/g, '&quot;')}">
+                            ${currentLang === 'ar' ? arData.title : enData.title}
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="service-detail-body">
+                <div class="container">
+                    <div class="service-detail-grid">
+                        <!-- Main Content -->
+                        <div class="service-detail-main-content" id="serviceDetailContent"
+                             data-ar-desc="${encodeURIComponent(arData.desc)}"
+                             data-en-desc="${encodeURIComponent(enData.desc)}">
+                            ${currentLang === 'ar' ? arData.desc : enData.desc}
+                        </div>
+
+                        <!-- Sidebar with Booking Form -->
+                        <div class="service-detail-sidebar">
+                            <div class="sidebar-sticky-wrapper">
+                                <div class="sidebar-booking-card">
+                                    <h3 class="card-title" data-ar="طلب هذه الخدمة" data-en="Order This Service">طلب هذه الخدمة</h3>
+                                    <p class="card-subtitle" 
+                                       data-ar="سجل بياناتك وسيتم توجيه ملفك لأحد مستشارينا المختصين فوراً." 
+                                       data-en="Submit details to connect with a specialized attorney immediately.">
+                                        سجل بياناتك وسيتم توجيه ملفك لأحد مستشارينا المختصين فوراً.
+                                    </p>
+                                    
+                                    <form class="sidebar-booking-form" id="serviceBookingForm">
+                                        <input type="hidden" id="bookingServiceId" value="${serviceId}">
+                                        
+                                        <div class="form-group">
+                                            <label for="bookingName" data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
+                                            <input type="text" id="bookingName" required data-placeholder-ar="مثال: محمد أحمد" data-placeholder-en="e.g. John Doe" placeholder="${currentLang === 'ar' ? 'مثال: محمد أحمد' : 'e.g. John Doe'}">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="bookingPhone" data-ar="رقم الجوال" data-en="Mobile Number">رقم الجوال</label>
+                                            <input type="tel" id="bookingPhone" required data-placeholder-ar="+971 50 123 4567" data-placeholder-en="+971 50 123 4567" placeholder="+971 50 123 4567">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="bookingDesc" data-ar="شرح موجز لطلبك" data-en="Briefly describe your request">شرح موجز لطلبك</label>
+                                            <textarea id="bookingDesc" rows="4" required data-placeholder-ar="يرجى كتابة التفاصيل هنا..." data-placeholder-en="Write details here..." placeholder="${currentLang === 'ar' ? 'يرجى كتابة التفاصيل هنا...' : 'Write details here...'}"></textarea>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-gold w-100">
+                                            <span data-ar="إرسال الطلب" data-en="Send Request">إرسال الطلب</span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-detail-footer">
+                        <a href="#services" class="btn-back">
+                            <span data-ar="&rarr; العودة لكافة الخدمات" data-en="&rarr; Back to all services">&rarr; Back to all services</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        `;
+        
+        // Attach form submit listener for the sidebar form
+        const bookingForm = document.getElementById('serviceBookingForm');
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const submitBtn = bookingForm.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.5';
+                
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                    
+                    // Show success modal
+                    const randomId = Math.floor(1000 + Math.random() * 9000);
+                    document.getElementById('ticketNumber').innerText = `#MT-${randomId}`;
+                    
+                    const successModal = document.getElementById('successModal');
+                    successModal.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                    
+                    bookingForm.reset();
+                }, 1200);
+            });
+        }
+    }
+
+    function handleRouting() {
+        const hash = window.location.hash;
+        const homeView = document.getElementById('home-view');
+        const serviceDetailView = document.getElementById('service-detail-view');
+        
+        // Match path hash: #/service/:id
+        const serviceMatch = hash.match(/^#\/service\/([1-7])$/);
+        
+        if (serviceMatch) {
+            const serviceId = serviceMatch[1];
+            
+            // Render detail view
+            renderServiceDetailPage(serviceId);
+            
+            // Toggle view visibility
+            homeView.style.display = 'none';
+            serviceDetailView.style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Run translation update on the new elements
+            updateLanguageUI(currentLang);
+        } else {
+            // Toggle view visibility back to homepage
+            homeView.style.display = 'block';
+            serviceDetailView.style.display = 'none';
+            
+            // If the hash is a home section, scroll smoothly to it
+            if (hash && hash.startsWith('#')) {
+                const targetId = hash.substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    setTimeout(() => {
+                        const offset = 120; // header height offset
+                        const topPos = targetSection.offsetTop - offset;
+                        window.scrollTo({
+                            top: topPos,
+                            behavior: 'smooth'
+                        });
+                    }, 50);
+                }
+            }
+        }
+    }
+
+    // Register routing event listeners
+    window.addEventListener('hashchange', handleRouting);
+    
+    // Run routing check on initial load
+    handleRouting();
 
 });
 
