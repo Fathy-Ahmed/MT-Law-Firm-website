@@ -1565,6 +1565,30 @@ html[dir="rtl"] .modal-sub-details ul li {
    ---------------------------------------------------- */
 .contact-section {
     background-color: var(--color-bg-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23C8A96A' stroke-width='1.2'%3E%3Cline x1='50' y1='15' x2='50' y2='85' stroke-width='2'/%3E%3Cpath d='M42,85 L58,85' stroke-width='3'/%3E%3Cpath d='M45,80 L55,80' stroke-width='2'/%3E%3Ccircle cx='50' cy='12' r='3' fill='%23C8A96A'/%3E%3Cpath d='M20,28 C35,24 65,24 80,28' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='20' y1='28' x2='10' y2='55'/%3E%3Cline x1='20' y1='28' x2='30' y2='55'/%3E%3Cpath d='M7,55 C10,62 30,62 33,55 Z'/%3E%3Cline x1='80' y1='28' x2='70' y2='55'/%3E%3Cline x1='80' y1='28' x2='90' y2='55'/%3E%3Cpath d='M67,55 C70,62 90,62 93,55 Z'/%3E%3Cpolygon points='50,22 47,28 53,28' fill='%23C8A96A'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.contact-section .container {
+    position: relative;
+    z-index: 2;
 }
 
 .contact-grid {
