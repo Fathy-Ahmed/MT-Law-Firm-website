@@ -447,13 +447,13 @@ html[dir="ltr"] .ticker-content {
 
 /* Header scrolled changes */
 .main-header.scrolled .logo-text .brand-ar {
-    color: var(--color-bg-dark);
+    color: var(--color-text-light);
 }
 
 .logo-text .brand-en {
     font-size: 0.65rem;
     font-weight: 600;
-    color: var(--color-gold-dark);
+    color: var(--color-gold-primary);
     letter-spacing: 1px;
     line-height: 1.1;
 }
@@ -2678,12 +2678,10 @@ html[lang="ar"] .service-detail-main-content ul li::before {
    10. GLOBAL SEARCH & SERVICES FILTERS
    ---------------------------------------------------- */
 
-/* Highlighted query text */
 mark.search-highlight {
-    background: linear-gradient(120deg, rgba(200, 169, 110, 0.4) 0%, rgba(200, 169, 110, 0.2) 100%);
-    color: #ffffff;
-    border-bottom: 2px solid var(--color-gold-primary);
-    padding: 0 2px;
+    background: var(--color-gold-primary);
+    color: var(--color-bg-light);
+    padding: 0 4px;
     border-radius: 2px;
     font-weight: 700;
 }
