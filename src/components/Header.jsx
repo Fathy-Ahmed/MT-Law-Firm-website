@@ -2,12 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import logo from '../assets/images/logo.png';
+import SearchModal from './SearchModal';
 
 export default function Header() {
   const { lang, toggleLang, t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
+
+  // Listen for Ctrl+K or Cmd+K to open search
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +56,7 @@ export default function Header() {
       <header className={`main-header ${scrolled ? 'scrolled' : ''}`}>
         <div className="container header-container">
           <Link to="/" className="logo-box" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src={logo} alt="MT Law Firm Logo" className="logo-emblem" />
+            <img src={logo} alt="Arkan Law Firm Logo" className="logo-emblem" />
             <div className="logo-text">
               <span className="brand-ar">{t('logoTextAr')}</span>
               <span className="brand-en">{t('logoTextEn')}</span>
@@ -61,6 +75,19 @@ export default function Header() {
           </nav>
 
           <div className="header-cta">
+            <button 
+              type="button" 
+              className="search-trigger-btn" 
+              onClick={() => setIsSearchOpen(true)}
+              aria-label={lang === 'ar' ? 'البحث' : 'Search'}
+              title={t('searchShortcut')}
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+
             <button className="lang-toggle-btn" id="langToggle" onClick={toggleLang} aria-label="Toggle Language">
               <span className="lang-label-active">{lang === 'ar' ? 'EN' : 'عربي'}</span>
             </button>
@@ -99,6 +126,8 @@ export default function Header() {
       </div>
       
       <div className={`drawer-overlay ${drawerOpen ? 'open' : ''}`} id="drawerOverlay" onClick={() => setDrawerOpen(false)}></div>
+
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   );
 }

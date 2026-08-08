@@ -50,7 +50,7 @@ export default function Preloader() {
   return (
     <div id="preloader" className={`preloader-overlay ${fade ? 'fade-out' : ''}`}>
       <div className="preloader-content">
-        <img src={logo} alt="MT Law Firm Logo" className="preloader-logo" />
+        <img src={logo} alt="Arkan Law Firm Logo" className="preloader-logo" />
       </div>
     </div>
   );

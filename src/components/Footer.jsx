@@ -13,7 +13,7 @@ export default function Footer() {
         {/* Col 1: About Brand */}
         <div className="footer-col brand-col">
           <Link to="/" className="logo-box footer-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src={logo} alt="MT Law Firm Logo" className="logo-emblem" />
+            <img src={logo} alt="Arkan Law Firm Logo" className="logo-emblem" />
             <div className="logo-text">
               <span className="brand-ar">{t('logoTextAr')}</span>
               <span className="brand-en">{t('logoTextEn')}</span>
@@ -77,7 +77,7 @@ export default function Footer() {
           <p>{t('mapAddress')}</p>
           <p><span>{t('mapPhoneLabel')}</span> <a href="tel:+97141234567">+971 4 123 4567</a></p>
           <p><span>{t('mapMobileLabel')}</span> <a href="tel:+971509876543">+971 50 987 6543</a></p>
-          <p><span>{t('mapEmailLabel')}</span> <a href="mailto:info@mt-lawfirm.com">info@mt-lawfirm.com</a></p>
+          <p><span>{t('mapEmailLabel')}</span> <a href="mailto:info@arkan-lawfirm.com">info@arkan-lawfirm.com</a></p>
         </div>
       </div>
 
