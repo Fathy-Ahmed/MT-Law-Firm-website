@@ -1,7 +1,7 @@
 {
-  "name": "arkan-lawfirm-website",
+  "name": "mt-lawfirm-website",
   "version": "1.0.0",
-  "description": "Website for Arkan Law Firm and Business Services",
+  "description": "Website for MT Law Firm",
   "main": "index.html",
   "type": "module",
   "scripts": {

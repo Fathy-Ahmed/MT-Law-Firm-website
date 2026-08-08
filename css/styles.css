@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CSS STYLESHEET - ARKAN LAW FIRM COFFEE THEME (BILINGUAL)
+   CSS STYLESHEET - MT LAW FIRM COFFEE THEME (BILINGUAL)
    ========================================================================== */
 
 /* ----------------------------------------------------
@@ -447,13 +447,13 @@ html[dir="ltr"] .ticker-content {
 
 /* Header scrolled changes */
 .main-header.scrolled .logo-text .brand-ar {
-    color: var(--color-text-light);
+    color: var(--color-bg-dark);
 }
 
 .logo-text .brand-en {
     font-size: 0.65rem;
     font-weight: 600;
-    color: var(--color-gold-primary);
+    color: var(--color-gold-dark);
     letter-spacing: 1px;
     line-height: 1.1;
 }
@@ -2678,10 +2678,12 @@ html[lang="ar"] .service-detail-main-content ul li::before {
    10. GLOBAL SEARCH & SERVICES FILTERS
    ---------------------------------------------------- */
 
+/* Highlighted query text */
 mark.search-highlight {
-    background: var(--color-gold-primary);
-    color: var(--color-bg-light);
-    padding: 0 4px;
+    background: linear-gradient(120deg, rgba(200, 169, 110, 0.4) 0%, rgba(200, 169, 110, 0.2) 100%);
+    color: #ffffff;
+    border-bottom: 2px solid var(--color-gold-primary);
+    padding: 0 2px;
     border-radius: 2px;
     font-weight: 700;
 }

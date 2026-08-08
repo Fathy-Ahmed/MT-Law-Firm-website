@@ -86,7 +86,7 @@ export default function Contact() {
     setTimeout(() => {
       setSubmitting(false);
       const randomId = Math.floor(1000 + Math.random() * 9000);
-      setTicketNumber(`#ARKAN-${randomId}`);
+      setTicketNumber(`#MT-${randomId}`);
       setModalOpen(true);
       setFormValues({
         clientName: '',
@@ -255,7 +255,7 @@ export default function Contact() {
                   </div>
                   <div className="card-text">
                     <h4>البريد / Email</h4>
-                    <p><a href="mailto:info@arkan-lawfirm.com">info@arkan-lawfirm.com</a></p>
+                    <p><a href="mailto:info@mt-lawfirm.com">info@mt-lawfirm.com</a></p>
                   </div>
                 </div>
               </div>

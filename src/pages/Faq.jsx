@@ -55,7 +55,7 @@ export default function Faq() {
           <div className="faq-grid" style={{ marginTop: '40px' }}>
             <div className="faq-column">
               <FaqCard 
-                question={lang === 'ar' ? 'هل يقدم مكتب أركان للمحاماة وخدمات الأعمال استشارات قانونية عبر الإنترنت؟' : 'Does Arkan Law Firm and Business Services provide online legal consultations?'}
+                question={lang === 'ar' ? 'هل يقدم مكتب MT للمحاماة استشارات قانونية عبر الإنترنت؟' : 'Does MT Law Firm provide online legal consultations?'}
                 answer={lang === 'ar' ? 'نعم، نقدم استشارات قانونية مرئية ومكتوبة عبر الإنترنت لعملائنا محلياً ودولياً لتسهيل الأعمال وتوفير الوقت والجهد، مع الالتزام التام بالسرية والخصوصية.' : 'Yes, we provide online virtual and written legal consultations to our clients locally and globally to facilitate business operations, save time, and maintain absolute confidentiality.'}
               />
               <FaqCard 
@@ -70,7 +70,7 @@ export default function Faq() {
 
             <div className="faq-column">
               <FaqCard 
-                question={lang === 'ar' ? 'ما هي المجالات القانونية التي يغطيها مكتب أركان للمحاماة وخدمات الأعمال؟' : 'What legal fields does Arkan Law Firm and Business Services cover?'}
+                question={lang === 'ar' ? 'ما هي المجالات القانونية التي يغطيها مكتب MT للمحاماة؟' : 'What legal fields does MT Law Firm cover?'}
                 answer={lang === 'ar' ? 'نغطي مجموعة واسعة من الخدمات القانونية بما في ذلك صياغة العقود التجارية، الترجمة القانونية المعتمدة، تأسيس الشركات وخدمات رجال الأعمال، حماية الملكية الفكرية، توثيق الشهر العقاري، الاستشارات الجنائية، وعقود الاستشارات السنوية للشركات.' : 'We cover a comprehensive scope of legal services including commercial contract drafting, certified legal translation, company formation, intellectual property protection, notarization/real estate authentication, criminal defense, and annual corporate retainer consultations.'}
               />
               <FaqCard 
