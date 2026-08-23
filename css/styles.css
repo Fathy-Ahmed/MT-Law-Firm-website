@@ -208,6 +208,7 @@ img {
     white-space: nowrap;
     width: 100%;
     position: relative;
+    direction: ltr; /* Force LTR layout for consistent padding & scrolling behavior */
 }
 
 .ticker-content {
@@ -215,6 +216,7 @@ img {
     padding-inline-start: 100%;
     animation: ticker-scroll 35s linear infinite;
     cursor: default;
+    direction: ltr;
 }
 
 .ticker-content:hover {
@@ -437,14 +439,12 @@ html[dir="ltr"] .ticker-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 4px;
+    gap: 2px;
 }
 
 .logo-text .brand-ar {
-    font-size: 0.9rem;
-    font-weight: 800;
+    font-size: 0.75rem;
+    font-weight: 700;
     color: var(--color-text-light);
     line-height: 1.2;
     white-space: nowrap;
@@ -456,7 +456,7 @@ html[dir="ltr"] .ticker-content {
 }
 
 .logo-text .brand-en {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 700;
     color: var(--color-gold-dark);
     letter-spacing: 0.5px;
