@@ -434,15 +434,23 @@ html[dir="ltr"] .ticker-content {
 
 .logo-text {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
 }
 
 .logo-text .brand-ar {
     font-size: 1.1rem;
     font-weight: 800;
     color: var(--color-text-light);
-    line-height: 1.2;
+    line-height: 1;
+}
+
+.logo-text .brand-divider {
+    color: rgba(200, 169, 126, 0.5);
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1;
 }
 
 /* Header scrolled changes */
@@ -451,11 +459,11 @@ html[dir="ltr"] .ticker-content {
 }
 
 .logo-text .brand-en {
-    font-size: 0.65rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--color-gold-dark);
-    letter-spacing: 1px;
-    line-height: 1.1;
+    letter-spacing: 0.5px;
+    line-height: 1;
 }
 
 /* Nav Menu Links */
