@@ -441,8 +441,8 @@ html[dir="ltr"] .ticker-content {
 }
 
 .logo-text .brand-ar {
-    font-size: 0.8rem;
-    font-weight: 800;
+    font-size: 0.75rem;
+    font-weight: 700;
     color: var(--color-text-light);
     line-height: 1.2;
     white-space: nowrap;
@@ -454,8 +454,8 @@ html[dir="ltr"] .ticker-content {
 }
 
 .logo-text .brand-en {
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.75rem;
+    font-weight: 700;
     color: var(--color-gold-dark);
     letter-spacing: 0.5px;
     line-height: 1.2;
