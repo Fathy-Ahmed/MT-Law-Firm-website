@@ -260,6 +260,7 @@ html[dir="ltr"] .ticker-content {
     border: none;
     outline: none;
     text-align: center;
+    white-space: nowrap;
 }
 
 /* Gold Coffee Metallic Button */
@@ -480,6 +481,7 @@ html[dir="ltr"] .ticker-content {
     color: var(--color-text-muted-light);
     padding: 8px 4px;
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-menu ul li a::after {
@@ -2152,6 +2154,17 @@ html[dir="ltr"] .back-to-top {
 @media (max-width: 1024px) {
     .main-header {
         top: 40px; /* Keep shifted on tablets/mobile */
+    }
+    .nav-menu ul {
+        gap: 12px;
+    }
+    .nav-menu ul li a {
+        font-size: 0.85rem;
+        padding: 6px 2px;
+    }
+    .btn-nav {
+        padding: 8px 14px;
+        font-size: 0.8rem;
     }
     .hero-section {
         height: auto;
