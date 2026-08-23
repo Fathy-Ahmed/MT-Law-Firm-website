@@ -113,6 +113,10 @@ html {
     font-size: 16px;
 }
 
+body {
+    padding-top: 40px; /* Offset for the fixed top ticker bar */
+}
+
 /* Lang-dependent dynamic fonts */
 html[lang="ar"] body {
     font-family: var(--font-ar-primary);
@@ -181,7 +185,10 @@ img {
     border-bottom: 1.5px solid rgba(200, 169, 126, 0.15);
     display: flex;
     align-items: center;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1001;
 }
 
@@ -410,7 +417,7 @@ html[dir="ltr"] .ticker-content {
     border-bottom: 1px solid #6B5A46;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     padding: 10px 0;
-    top: 0; /* move back to absolute top when scrolling */
+    top: 40px; /* Stay stacked below ticker bar when scrolling */
 }
 
 .header-container {
