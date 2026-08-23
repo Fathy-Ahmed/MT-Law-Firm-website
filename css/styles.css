@@ -2214,7 +2214,7 @@ html[dir="ltr"] .back-to-top {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .nav-menu {
         display: none;
     }
@@ -2224,7 +2224,9 @@ html[dir="ltr"] .back-to-top {
     .mobile-toggle {
         display: flex;
     }
-    
+}
+
+@media (max-width: 768px) {
     .about-image-box {
         aspect-ratio: auto !important;
         flex-direction: column !important;
