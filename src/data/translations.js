@@ -6,7 +6,7 @@ export const translations = {
     
     // Header & Navigation
     logoTextAr: "مكتب أركان للمحاماة",
-    logoTextEn: "Arkan Law Firm",
+    logoTextEn: "ARKAN LAW FIRM",
     navHome: "الرئيسية",
     navAbout: "عن المكتب",
     navServices: "مجالات الاختصاص",
