@@ -16,7 +16,6 @@ export default function Footer() {
             <img src={logo} alt="Arkan Law Firm Logo" className="logo-emblem" />
             <div className="logo-text">
               <span className="brand-ar">{t('logoTextAr')}</span>
-              <span className="brand-divider">|</span>
               <span className="brand-en">{t('logoTextEn')}</span>
             </div>
           </Link>
