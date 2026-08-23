@@ -76,7 +76,7 @@ export default function SearchModal({ isOpen, onClose }) {
     {
       type: 'faq',
       id: 'faq-1',
-      title: lang === 'ar' ? 'هل يقدم مكتب MT للمحاماة استشارات قانونية عبر الإنترنت؟' : 'Does MT Law Firm provide online legal consultations?',
+      title: lang === 'ar' ? 'هل يقدم مكتب أركان للمحاماة استشارات قانونية عبر الإنترنت؟' : 'Does Arkan Law Firm provide online legal consultations?',
       snippet: lang === 'ar' ? 'نعم، نقدم استشارات قانونية مرئية ومكتوبة عبر الإنترنت لعملائنا محلياً ودولياً لتسهيل الأعمال وتوفير الوقت والجهد، مع الالتزام التام بالسرية والخصوصية.' : 'Yes, we provide online virtual and written legal consultations to our clients locally and globally to facilitate business operations, save time, and maintain absolute confidentiality.',
       link: '/faq',
       categoryName: lang === 'ar' ? 'الأسئلة الشائعة' : 'FAQ'
@@ -100,7 +100,7 @@ export default function SearchModal({ isOpen, onClose }) {
     {
       type: 'faq',
       id: 'faq-4',
-      title: lang === 'ar' ? 'ما هي المجالات القانونية التي يغطيها مكتب MT للمحاماة؟' : 'What legal fields does MT Law Firm cover?',
+      title: lang === 'ar' ? 'ما هي المجالات القانونية التي يغطيها مكتب أركان للمحاماة؟' : 'What legal fields does Arkan Law Firm cover?',
       snippet: lang === 'ar' ? 'نغطي مجموعة واسعة من الخدمات القانونية بما في ذلك صياغة العقود التجارية، الترجمة القانونية المعتمدة، تأسيس الشركات وخدمات رجال الأعمال، حماية الملكية الفكرية، توثيق الشهر العقاري، الاستشارات الجنائية، وعقود الاستشارات السنوية للشركات.' : 'We cover a comprehensive scope of legal services including commercial contract drafting, certified legal translation, company formation, intellectual property protection, notarization/real estate authentication, criminal defense, and annual corporate retainer consultations.',
       link: '/faq',
       categoryName: lang === 'ar' ? 'الأسئلة الشائعة' : 'FAQ'

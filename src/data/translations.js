@@ -5,7 +5,7 @@ export const translations = {
     tickerContent: "تحديث: صدور اللائحة التنفيذية الجديدة لنظام الشركات الاستثمارية • تعديلات ضريبة القيمة المضافة لعام 2026 ودخولها حيز التنفيذ • بدء تفعيل خدمات توثيق الشهر العقاري الرقمي بالكامل",
     
     // Header & Navigation
-    logoTextAr: "مكتب MT للمحاماة",
+    logoTextAr: "مكتب أركان للمحاماة",
     logoTextEn: "الاستشارات القانونية",
     navHome: "الرئيسية",
     navAbout: "عن المكتب",
@@ -13,7 +13,7 @@ export const translations = {
     navTeam: "فريق العمل",
     navContact: "تواصل معنا",
     btnConsultation: "طلب استشارة",
-    drawerTitle: "مكتب MT للمحاماة",
+    drawerTitle: "مكتب أركان للمحاماة",
     
     // Hero Section
     heroBadge: "حلول قانونية متكاملة لبيئة أعمال آمنة",
@@ -36,7 +36,7 @@ export const translations = {
     aboutTitle: "ريادة مهنية في الاستشارات القانونية والحلول المتكاملة",
     aboutExpText: "عاماً من الريادة الاستشارية",
     aboutLead: "تقديم الاستشارات والحلول الوقائية وحماية حقوق موكلينا",
-    aboutText1: "تأسس مكتب MT للمحاماة والاستشارات القانونية ليرسم معياراً جديداً في تقديم الاستشارات القانونية المتخصصة. نرى أن القانون هو البنية الأساسية لنجاح المشاريع والاستثمارات، ولذلك نعمل على صياغة الحلول القانونية الوقائية والريادية لرجال الأعمال والمؤسسات.",
+    aboutText1: "تأسس مكتب أركان للمحاماة والاستشارات القانونية ليرسم معياراً جديداً في تقديم الاستشارات القانونية المتخصصة. نرى أن القانون هو البنية الأساسية لنجاح المشاريع والاستثمارات، ولذلك نعمل على صياغة الحلول القانونية الوقائية والريادية لرجال الأعمال والمؤسسات.",
     aboutText2: "يرتكز نهجنا على التميز والتأصيل الدقيق وفهم الأبعاد التشريعية المعاصرة، مع الالتزام بأقصى مقاييس المهنية والسرية التامة في تيسير أعمالكم.",
     value1Title: "منهجية الوقاية القانونية",
     value1Desc: "صياغة متكاملة وتدقيق عقود استباقي لتفادي المنازعات القضائية وتوفير التكلفة والوقت.",
@@ -93,11 +93,11 @@ export const translations = {
     
     // Success Modal
     modalSuccessTitle: "تم استلام طلبكم بنجاح!",
-    modalSuccessMessage: "نشكركم على ثقتكم بمكتب MT للمحاماة. تم تسجيل طلب استشارتكم القانونية. سيقوم مستشارونا بدراسة الملف والتواصل معكم خلال 24 ساعة.",
+    modalSuccessMessage: "نشكركم على ثقتكم بمكتب أركان للمحاماة. تم تسجيل طلب استشارتكم القانونية. سيقوم مستشارونا بدراسة الملف والتواصل معكم خلال 24 ساعة.",
     modalSuccessClose: "إغلاق وتصفح الموقع",
     
     // Map
-    mapTitle: "موقع مكتب MT للمحاماة (برج الشريك)",
+    mapTitle: "موقع مكتب أركان للمحاماة (برج الشريك)",
     mapBtn: "فتح في خرائط جوجل",
     mapAddress: "مقر دبي: شارع الشيخ زايد، برج الشريك، الطابق 42.",
     mapPhoneLabel: "الهاتف:",
@@ -105,8 +105,8 @@ export const translations = {
     mapEmailLabel: "البريد:",
     
     // Footer bottom
-    footerCopy: "© 2026 مكتب MT للمحاماة والاستشارات القانونية. جميع الحقوق محفوظة.",
-    footerDev: "صُمم الفن الهيكلي والبرمجة بفخامة لمصلحة مكتب MT.",
+    footerCopy: "© 2026 مكتب أركان للمحاماة والاستشارات القانونية. جميع الحقوق محفوظة.",
+    footerDev: "صُمم الفن الهيكلي والبرمجة بفخامة لمصلحة مكتب أركان.",
     
     // FAQ
     faqLabel: "الأسئلة الشائعة",
@@ -136,7 +136,7 @@ export const translations = {
     tickerContent: "Update: Issue of new executive regulations for corporate investment law • 2026 VAT modifications take effect • Full activation of digital real estate authentication services",
     
     // Header & Navigation
-    logoTextAr: "MT LAW FIRM",
+    logoTextAr: "ARKAN LAW FIRM",
     logoTextEn: "ADVOCATES & CONSULTANTS",
     navHome: "Home",
     navAbout: "About Us",
@@ -144,7 +144,7 @@ export const translations = {
     navTeam: "Our Team",
     navContact: "Contact Us",
     btnConsultation: "Book Consultation",
-    drawerTitle: "MT Law Firm",
+    drawerTitle: "Arkan Law Firm",
     
     // Hero Section
     heroBadge: "Integrated legal solutions for secure businesses",
@@ -167,7 +167,7 @@ export const translations = {
     aboutTitle: "Professional Leadership in Legal Counsel & Solutions",
     aboutExpText: "Years of Consultative Leadership",
     aboutLead: "Delivering Preventive Legal Counsel & Solid Protection",
-    aboutText1: "MT Law Firm was established to define a new standard in boutique corporate legal counsel. We view law as the structural foundation for corporate success and business ventures. Hence, we focus on formulating preventive and elite corporate arrangements to shield our clients' interests.",
+    aboutText1: "Arkan Law Firm was established to define a new standard in boutique corporate legal counsel. We view law as the structural foundation for corporate success and business ventures. Hence, we focus on formulating preventive and elite corporate arrangements to shield our clients' interests.",
     aboutText2: "Our approach focuses on precision, regulatory intelligence, and navigating contemporary corporate frameworks, all while maintaining the highest values of confidentiality and speed in executing client matters.",
     value1Title: "Preventive Law Philosophy",
     value1Desc: "Comprehensive drafting and proactive reviews to completely avoid litigations, saving crucial resources.",
@@ -224,11 +224,11 @@ export const translations = {
     
     // Success Modal
     modalSuccessTitle: "Request Submitted Successfully!",
-    modalSuccessMessage: "Thank you for trusting MT Law Firm. Your consultation request has been logged. Our attorneys will review the case parameters and contact you within 24 business hours.",
+    modalSuccessMessage: "Thank you for trusting Arkan Law Firm. Your consultation request has been logged. Our attorneys will review the case parameters and contact you within 24 business hours.",
     modalSuccessClose: "Close & Browse Website",
     
     // Map
-    mapTitle: "MT Law Firm Location (Partner Tower)",
+    mapTitle: "Arkan Law Firm Location (Partner Tower)",
     mapBtn: "Open Google Maps",
     mapAddress: "Dubai HQ: 42nd Floor, Partner Tower, Sheikh Zayed Road.",
     mapPhoneLabel: "Phone:",
@@ -236,8 +236,8 @@ export const translations = {
     mapEmailLabel: "Email:",
     
     // Footer bottom
-    footerCopy: "© 2026 MT Law Firm. All rights reserved.",
-    footerDev: "Designed & Engineered for MT Law Firm.",
+    footerCopy: "© 2026 Arkan Law Firm. All rights reserved.",
+    footerDev: "Designed & Engineered for Arkan Law Firm.",
     
     // FAQ
     faqLabel: "FAQ",

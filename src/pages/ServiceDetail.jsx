@@ -71,7 +71,7 @@ export default function ServiceDetail() {
     setTimeout(() => {
       setSubmitting(false);
       const randomId = Math.floor(1000 + Math.random() * 9000);
-      setTicketNumber(`#MT-${randomId}`);
+      setTicketNumber(`#ARKAN-${randomId}`);
       setModalOpen(true);
       setFormValues({
         bookingName: '',

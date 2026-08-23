@@ -13,7 +13,7 @@ export default function Footer() {
         {/* Col 1: About Brand */}
         <div className="footer-col brand-col">
           <Link to="/" className="logo-box footer-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src={logo} alt="MT Law Firm Logo" className="logo-emblem" />
+            <img src={logo} alt="Arkan Law Firm Logo" className="logo-emblem" />
             <div className="logo-text">
               <span className="brand-ar">{t('logoTextAr')}</span>
               <span className="brand-en">{t('logoTextEn')}</span>

@@ -56,7 +56,7 @@ export default function Header() {
       <header className={`main-header ${scrolled ? 'scrolled' : ''}`}>
         <div className="container header-container">
           <Link to="/" className="logo-box" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src={logo} alt="MT Law Firm Logo" className="logo-emblem" />
+            <img src={logo} alt="Arkan Law Firm Logo" className="logo-emblem" />
             <div className="logo-text">
               <span className="brand-ar">{t('logoTextAr')}</span>
               <span className="brand-en">{t('logoTextEn')}</span>
